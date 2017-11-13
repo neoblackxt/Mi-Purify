@@ -16,11 +16,6 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class HideApp extends XposedHelper implements IModule {
     @Override
-    public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) {
-
-    }
-
-    @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
         final String value = prefs.getString("Hide_App_List", "");
         if (!value.equals("")) {

@@ -5,8 +5,6 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public interface IModule {
-    void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam);
-
     void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam);
 
     void initZygote(IXposedHookZygoteInit.StartupParam startupParam);

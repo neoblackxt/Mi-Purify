@@ -18,12 +18,7 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 
-public class start implements IXposedHookZygoteInit, IXposedHookLoadPackage, IXposedHookInitPackageResources {
-    @Override
-    public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) throws Throwable {
-        new RemoveSearchBar().handleInitPackageResources(resparam);
-        new MiuiRoot().handleInitPackageResources(resparam);
-    }
+public class start implements IXposedHookZygoteInit, IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
