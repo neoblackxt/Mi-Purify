@@ -1,7 +1,5 @@
 package com.coderstory.Purify.module;
 
-import android.widget.Toast;
-
 import com.coderstory.Purify.plugins.IModule;
 import com.coderstory.Purify.utils.XposedHelper;
 
@@ -42,9 +40,6 @@ public class CorePatch extends XposedHelper implements IModule {
 
     }
 
-    @Override
-    public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) {
-    }
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam paramLoadPackageParam) {
@@ -63,7 +58,8 @@ public class CorePatch extends XposedHelper implements IModule {
                     if (prefs.getBoolean("downgrade", false)) {
                         Field field = packageClass.getField("mVersionCode");
                         field.set(packageInfoLite, 0);
-                    };
+                    }
+                    ;
                 }
             });
 
@@ -78,7 +74,7 @@ public class CorePatch extends XposedHelper implements IModule {
             });
 
             XposedBridge.hookAllMethods(localClass, "compareSignatures", new XC_MethodHook() {
-                protected void beforeHookedMethod(MethodHookParam methodHookParam) throws  Throwable {
+                protected void beforeHookedMethod(MethodHookParam methodHookParam) throws Throwable {
                     prefs.reload();
                     if (prefs.getBoolean("zipauthcreak", false)) {
                         methodHookParam.setResult(0);
