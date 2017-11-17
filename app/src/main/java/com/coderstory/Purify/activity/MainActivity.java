@@ -28,18 +28,34 @@ import com.coderstory.Purify.fragment.DisbaleAppFragment;
 import com.coderstory.Purify.fragment.HideAppFragment;
 import com.coderstory.Purify.fragment.HostsFragment;
 import com.coderstory.Purify.fragment.ManagerAppFragment;
+import com.coderstory.Purify.fragment.OthersFragment;
 import com.coderstory.Purify.fragment.SettingsFragment;
 import com.coderstory.Purify.fragment.WebViewFragment;
 import com.coderstory.Purify.utils.SnackBarUtils;
 import com.coderstory.Purify.utils.ViewUtils;
 
+import eu.chainfire.libsuperuser.Shell;
+
 import static com.coderstory.Purify.R.id.navigation_view;
-import static com.coderstory.Purify.utils.roothelper.SuHelper.canRunRootCommands;
 
 public class MainActivity extends BaseActivity {
 
     public static final long MAX_DOUBLE_BACK_DURATION = 1500;
     private static final int READ_EXTERNAL_STORAGE_CODE = 1;
+    @SuppressLint("HandlerLeak")
+    Handler myHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            final AlertDialog.Builder normalDialog =
+                    new AlertDialog.Builder(MainActivity.this);
+            normalDialog.setTitle("提示");
+            normalDialog.setMessage("请先授权应用ROOT权限");
+            normalDialog.setPositiveButton("确定",
+                    (dialog, which) -> System.exit(0));
+            // 显示
+            normalDialog.show();
+            super.handleMessage(msg);
+        }
+    };
     private DrawerLayout mDrawerLayout;//侧边菜单视图
     private Toolbar mToolbar;
     private NavigationView mNavigationView;//侧边菜单项
@@ -47,7 +63,6 @@ public class MainActivity extends BaseActivity {
     private Fragment mCurrentFragment;
     private MenuItem mPreMenuItem;
     private long lastBackKeyDownTick = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,21 +95,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @SuppressLint("HandlerLeak")
-    Handler myHandler = new Handler() {
-        public void handleMessage(Message msg) {
-            final AlertDialog.Builder normalDialog =
-                    new AlertDialog.Builder(MainActivity.this);
-            normalDialog.setTitle("提示");
-            normalDialog.setMessage("请先授权应用ROOT权限");
-            normalDialog.setPositiveButton("确定",
-                    (dialog, which) -> System.exit(0));
-            // 显示
-            normalDialog.show();
-            super.handleMessage(msg);
-        }
-    };
-
     @Override
     protected void setUpView() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -112,7 +112,7 @@ public class MainActivity extends BaseActivity {
 
 
         new Thread(() -> {
-            if (!canRunRootCommands()) {
+            if (!Shell.SU.available()) {
                 myHandler.sendMessage(new Message());
             }
         }).start();
@@ -174,7 +174,7 @@ public class MainActivity extends BaseActivity {
                     break;
 
                 case R.id.navigation_item_settings:
-                    mToolbar.setTitle(R.string.othersettings);
+                    mToolbar.setTitle(R.string.others_appsettings);
                     switchFragment(SettingsFragment.class);
                     break;
 
@@ -197,6 +197,11 @@ public class MainActivity extends BaseActivity {
                 case R.id.navigation_item_hide_app:
                     mToolbar.setTitle(R.string.hide_app_icon);
                     switchFragment(HideAppFragment.class);
+                    break;
+
+                case R.id.navigation_item_otherssettings:
+                    mToolbar.setTitle(R.string.othersettings);
+                    switchFragment(OthersFragment.class);
                     break;
 
                 default:
