@@ -9,6 +9,7 @@ import java.io.File;
 
 import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.XC_MethodReplacement;
+import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class ThemePather8 extends XposedHelper implements IModule {
@@ -22,13 +23,18 @@ public class ThemePather8 extends XposedHelper implements IModule {
         if (lpparam.packageName.equals("com.android.thememanager")) {
             //设计师资格
             findAndHookMethod("com.android.thememanager.util.ThemeOperationHandler", lpparam.classLoader, "isTrialable", XC_MethodReplacement.returnConstant(true));
-            //是否合法
+            findAndHookMethod("com.android.thememanager.util.ds", lpparam.classLoader, "v", XC_MethodReplacement.returnConstant(true));
+            //是否合法 DrmManager$DrmResult
             findAndHookMethod("com.android.thememanager.util.ThemeOperationHandler", lpparam.classLoader, "isLegal", XC_MethodReplacement.returnConstant(true));
+            findAndHookMethod("com.android.thememanager.util.ds", lpparam.classLoader, "a", XC_MethodReplacement.returnConstant(true));
             //是否被篡改（本地导入修改的主题）
             findAndHookMethod("com.android.thememanager.util.ThemeOperationHandler", lpparam.classLoader, "isAuthorizedResource", XC_MethodReplacement.returnConstant(true));
+            findAndHookMethod("com.android.thememanager.util.ds", lpparam.classLoader, "k", XC_MethodReplacement.returnConstant(true));
             //判断是有权限使用
-            findAndHookMethod("com.android.thememanager.util.ThemeOperationHandler", lpparam.classLoader, "isPermanentRights", XC_MethodReplacement.returnConstant(true));
-        }
+        findAndHookMethod("com.android.thememanager.util.ThemeOperationHandler", lpparam.classLoader, "isPermanentRights", XC_MethodReplacement.returnConstant(true));
+            findAndHookMethod("com.android.thememanager.util.ds", lpparam.classLoader, "x", XC_MethodReplacement.returnConstant(true));
+
+    }
     }
 
     @Override
