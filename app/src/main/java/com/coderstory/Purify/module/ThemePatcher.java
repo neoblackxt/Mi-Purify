@@ -22,11 +22,6 @@ public class ThemePatcher extends XposedHelper implements IModule {
     private final String Base_Package = "com.android.thememanager.util";
 
     @Override
-    public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) {
-
-    }
-
-    @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) {
 
         if ((lpparam.packageName.equals("miui.drm")) || (lpparam.packageName.equals("com.miui.system")) || (lpparam.packageName.equals("miui.system"))) {
