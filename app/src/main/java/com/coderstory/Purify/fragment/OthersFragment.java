@@ -106,7 +106,7 @@ public class OthersFragment extends BaseFragment {
             sudoFixPermissions();
         });
 
-        if (getPrefs().getString("platform","").equals("")){
+        if (getPrefs().getString("platform", "").equals("")) {
             // 读取平台签名并保存
             new Thread(() -> {
                 try {

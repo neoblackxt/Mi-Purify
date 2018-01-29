@@ -8,6 +8,7 @@ import com.coderstory.Purify.module.MiuiHome;
 import com.coderstory.Purify.module.Others;
 import com.coderstory.Purify.module.RemoveAds;
 import com.coderstory.Purify.module.ThemePatcher;
+
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.XposedBridge;
