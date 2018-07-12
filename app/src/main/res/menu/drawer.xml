@@ -21,12 +21,6 @@
             android:id="@+id/navigation_item_Clean"
             android:icon="@drawable/clean"
             android:title="@string/appclean" />
-
-        <item
-            android:id="@+id/navigation_item_hide_app"
-            android:icon="@drawable/iconfont_source"
-            android:title="@string/hide_app_icon" />
-
         <item
             android:id="@+id/navigation_item_hosts"
             android:icon="@drawable/hosts"

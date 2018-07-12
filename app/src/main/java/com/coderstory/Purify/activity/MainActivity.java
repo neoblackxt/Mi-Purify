@@ -226,10 +226,6 @@ public class MainActivity extends BaseActivity {
                     mToolbar.setTitle(R.string.navigation_item_ManagerApp);
                     switchFragment(ManagerAppFragment.class);
                     break;
-                case R.id.navigation_item_hide_app:
-                    mToolbar.setTitle(R.string.hide_app_icon);
-                    switchFragment(HideAppFragment.class);
-                    break;
 
                 case R.id.navigation_item_otherssettings:
                     mToolbar.setTitle(R.string.othersettings);
