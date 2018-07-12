@@ -44,6 +44,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
                 android:checked="true"
+                android:visibility="gone"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
                 android:text="@string/enablexposed" />

@@ -29,16 +29,17 @@
             <Switch
                 android:id="@+id/enableBlockAD"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="73dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
-                android:maxLines="10"
+                android:maxLines="20"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
                 android:text="@string/enableBlockADS" />
 
 
             <Switch
+                android:visibility="gone"
                 android:id="@+id/enableMMS"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
@@ -52,6 +53,7 @@
                 android:id="@+id/enableDownload"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
@@ -62,6 +64,7 @@
                 android:id="@+id/enabletheme"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
@@ -72,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
+                android:visibility="gone"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
                 android:text="@string/mvadnote" />
@@ -83,6 +87,7 @@
 
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
+                android:visibility="gone"
                 android:paddingTop="30dp"
                 android:text="@string/corepatch" />
 
@@ -90,6 +95,7 @@
                 android:id="@+id/downgrade"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
@@ -100,6 +106,7 @@
                 android:id="@+id/authcreak"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
@@ -108,6 +115,7 @@
 
             <Switch
                 android:id="@+id/zipauthcreak"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
@@ -121,6 +129,7 @@
                 android:layout_height="40dp"
 
                 android:paddingEnd="30dp"
+                android:visibility="gone"
                 android:paddingStart="30dp"
                 android:paddingTop="20dp"
                 android:text="@string/historyFunctions" />
@@ -133,6 +142,7 @@
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
+                android:visibility="gone"
                 android:text="@string/fixpcb" />
 
             <Switch
@@ -140,6 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
@@ -152,6 +163,7 @@
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
                 android:paddingTop="0dp"
+                android:visibility="gone"
                 android:text="@string/xposedmodule" />
 
             <Switch
@@ -162,6 +174,7 @@
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
+                android:visibility="gone"
                 android:text="@string/hide_icon_label" />
 
 
@@ -173,6 +186,7 @@
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
+                android:visibility="gone"
                 android:text="@string/prevent_freeze_reverse" />
 
             <Switch
@@ -182,6 +196,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/switchBtn"
                 android:paddingEnd="30dp"
+                android:visibility="gone"
                 android:paddingStart="30dp"
                 android:text="@string/RemoveSearchBar" />
 

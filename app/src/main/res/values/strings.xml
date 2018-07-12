@@ -15,11 +15,11 @@
             <b>LicensesDialog</b>\nhttps://github.com/PSDev/LicensesDialog\n\n
     </string>
     <string name="about_msg3"><b>声明</b>\n软件授权协议</string>
-    <string name="enableBlockADS"><b>基础功能</b>\n去除大部分的广告</string>
+    <string name="enableBlockADS"><b>基础功能</b>\n去除内置应用的开屏广告（splash advertising）配合Hosts去除更多广告</string>
     <string name="downloadexplorer"><b>下载管理</b>\n去下载管理界面的广告</string>
     <string name="mms"><b>短信</b>\n去除具体短信信息界面上的充值话费充值流量贷款申请信用卡等垃圾信息，开启后无法直接复制短信验证码</string>
     <string name="enableHosts"><b>启用模块</b>\n开启Hosts支持模块</string>
-    <string name="miuiads"><b>屏蔽小米广告</b>\n通过hosts屏蔽部分小米的广告,但可能导致小部分小米服务访问异常</string>
+    <string name="miuiads"><b>屏蔽小米广告</b>\n通过hosts屏蔽大部分小米的广告，不含浏览器和视频</string>
     <string name="blockads"><b>开启常规去广告</b>\nGithub上的hosts合集,用于屏蔽国内广告.</string>
     <string name="googlehosts"><b>开启常见国外网站访问支持</b>\nGithub上随意找的Hosts,包含了一些常见的国外网站,不含google,有时效性</string>
     <string name="hostsnote"><b>注意事项:</b>\n本功能需要ROOT权限,所有修改重启后才能生效.hosts的更新需要重新启用一次开关才能生效.国外网站请使用https访问.</string>
